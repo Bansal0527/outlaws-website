@@ -14,11 +14,12 @@ const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const navLinks = [
-        { name: "New Arrivals", href: "#new" },
-        { name: "T-Shirts", href: "#tees" },
-        { name: "Hoodies", href: "#hoodies" },
-        { name: "Bottoms", href: "#bottoms" },
-        { name: "Accessories", href: "#accessories" },
+        { name: "New Arrivals", href: "/new-arrivals" },
+        { name: "T-Shirts", href: "/products/tshirts" },
+        { name: "Polos", href: "/products/polo" },
+        { name: "Hoodies", href: "/products/hoodies" },
+        { name: "Shirts", href: "/products/shirts" },
+        { name: "Oversized", href: "/products/oversized" },
     ];
 
     return (
@@ -63,7 +64,7 @@ const Header = () => {
 
                         {/* Center - Logo */}
                         <div className="flex items-center justify-center">
-                            <Link href="/" className="flex items-center gap-3 group">
+                            {/* <Link href="/" className="flex items-center gap-3 group">
                                 <div className="relative w-8 h-8 lg:w-10 lg:h-10 overflow-hidden rounded-sm border border-border group-hover:border-primary transition-colors">
                                     <Image
                                         src="/assets/logo.jpeg"
@@ -71,11 +72,11 @@ const Header = () => {
                                         fill
                                         className="object-cover"
                                     />
-                                </div>
+                                </div> */}
                                 <span className="text-lg lg:text-2xl font-bold tracking-tighter uppercase text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
                                     The OutLaws Club
                                 </span>
-                            </Link>
+                            {/* </Link> */}
                         </div>
 
                         {/* Right - Icons */}

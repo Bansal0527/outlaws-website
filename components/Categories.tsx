@@ -10,24 +10,35 @@ const categories = [
         name: "T-SHIRTS",
         image: "/assets/category-tees.jpg",
         count: "48 Items",
+        href: "/products/tshirts",
     },
     {
         id: 2,
-        name: "HOODIES",
+        name: "SHIRTS",
         image: "/assets/category-hoodies.jpg",
         count: "32 Items",
+        href: "/products/shirts",
     },
     {
         id: 3,
-        name: "BOTTOMS",
+        name: "POLO",
         image: "/assets/category-pants.jpg",
         count: "24 Items",
+        href: "/products/polo",
     },
     {
         id: 4,
-        name: "ACCESSORIES",
+        name: "HOODIES",
+        image: "/assets/category-hoodies.jpg",
+        count: "28 Items",
+        href: "/products/hoodies",
+    },
+    {
+        id: 5,
+        name: "OVERSIZED",
         image: "/assets/category-accessories.jpg",
         count: "16 Items",
+        href: "/products/oversized",
     },
 ];
 
@@ -49,7 +60,7 @@ const Categories = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
                     {categories.map((category, index) => (
                         <motion.div
                             key={category.id}
@@ -59,7 +70,7 @@ const Categories = () => {
                             transition={{ delay: index * 0.1 }}
                         >
                             <Link
-                                href="#"
+                                href={category.href}
                                 className="group relative block aspect-square overflow-hidden bg-card"
                             >
                                 <Image
