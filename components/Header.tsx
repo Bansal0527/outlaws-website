@@ -6,6 +6,7 @@ import { Menu, Search, User, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import MobileMenu from "./MobileMenu";
+import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -81,14 +82,15 @@ const Header = () => {
 
                         {/* Right - Icons */}
                         <div className="flex items-center justify-end gap-1 md:gap-2">
-                            <Button
+                            <ThemeToggle />
+                            {/* <Button
                                 variant="ghost"
                                 size="icon"
                                 onClick={() => setIsSearchOpen(!isSearchOpen)}
                                 className="h-9 w-9"
                             >
                                 <Search className="h-5 w-5" />
-                            </Button>
+                            </Button> */}
                             <Button variant="ghost" size="icon" className="h-9 w-9">
                                 <User className="h-5 w-5" />
                             </Button>

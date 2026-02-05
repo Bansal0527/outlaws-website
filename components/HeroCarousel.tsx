@@ -72,9 +72,9 @@ const HeroCarousel = () => {
                         priority
                         className="object-cover"
                     />
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                    {/* Gradient Overlay - Dark in light mode, Light in dark mode */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent dark:from-background/90 dark:via-background/50" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent dark:from-background dark:via-transparent" />
                 </motion.div>
             </AnimatePresence>
 
@@ -92,10 +92,10 @@ const HeroCarousel = () => {
                         <span className="inline-block px-4 py-1 bg-primary text-primary-foreground text-sm font-medium tracking-wider mb-4">
                             {slides[current].subtitle}
                         </span>
-                        <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-none mb-4">
+                        <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-white dark:text-foreground leading-none mb-4">
                             {slides[current].title}
                         </h2>
-                        <p className="text-lg md:text-xl text-foreground/80 mb-8">
+                        <p className="text-lg md:text-xl text-white/90 dark:text-foreground/80 mb-8">
                             {slides[current].description}
                         </p>
                         <Button variant="hero" size="lg">
@@ -111,7 +111,7 @@ const HeroCarousel = () => {
                     variant="ghost"
                     size="icon"
                     onClick={prev}
-                    className="border border-foreground/20 hover:border-primary hover:text-primary rounded-full w-10 h-10"
+                    className="border border-white/40 dark:border-foreground/20 hover:border-primary hover:text-primary rounded-full w-10 h-10 text-white dark:text-foreground"
                 >
                     <ChevronLeft className="h-5 w-5" />
                 </Button>
@@ -122,7 +122,7 @@ const HeroCarousel = () => {
                             onClick={() => setCurrent(index)}
                             className={`h-2 transition-all duration-300 ${index === current
                                     ? "w-8 bg-primary"
-                                    : "w-2 bg-foreground/30 hover:bg-foreground/50"
+                                    : "w-2 bg-white/50 dark:bg-foreground/30 hover:bg-white/70 dark:hover:bg-foreground/50"
                                 } rounded-full`}
                         />
                     ))}
@@ -131,7 +131,7 @@ const HeroCarousel = () => {
                     variant="ghost"
                     size="icon"
                     onClick={next}
-                    className="border border-foreground/20 hover:border-primary hover:text-primary rounded-full w-10 h-10"
+                    className="border border-white/40 dark:border-foreground/20 hover:border-primary hover:text-primary rounded-full w-10 h-10 text-white dark:text-foreground"
                 >
                     <ChevronRight className="h-5 w-5" />
                 </Button>

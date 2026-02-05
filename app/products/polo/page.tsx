@@ -54,17 +54,17 @@ export default function PoloPage() {
                     fill
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-background/60" />
+                <div className="absolute inset-0 bg-black/60 dark:bg-background/60" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center"
                     >
-                        <h1 className="font-display text-5xl md:text-7xl text-foreground mb-4">
+                        <h1 className="font-display text-5xl md:text-7xl text-white dark:text-foreground mb-4">
                             POLO
                         </h1>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-gray-200 dark:text-muted-foreground text-lg">
                             Timeless style meets modern comfort
                         </p>
                     </motion.div>

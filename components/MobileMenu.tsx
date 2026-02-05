@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Instagram, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
 
 interface MobileMenuProps {
@@ -37,9 +38,12 @@ const MobileMenu = ({ isOpen, onClose, links }: MobileMenuProps) => {
                             {/* Header */}
                             <div className="flex items-center justify-between mb-10">
                                 <h2 className="font-display text-2xl tracking-wider">MENU</h2>
-                                <Button variant="ghost" size="icon" onClick={onClose}>
-                                    <X className="h-6 w-6" />
-                                </Button>
+                                <div className="flex items-center gap-2">
+                                    <ThemeToggle />
+                                    <Button variant="ghost" size="icon" onClick={onClose}>
+                                        <X className="h-6 w-6" />
+                                    </Button>
+                                </div>
                             </div>
 
                             {/* Nav Links */}
