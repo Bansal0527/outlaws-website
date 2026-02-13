@@ -41,7 +41,7 @@ const Footer = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
                     {/* Brand */}
                     <div className="col-span-2 md:col-span-4 lg:col-span-1">
-                        {/* <Image src="/assets/logo.jpeg" alt="The Outlaws Club" width={64} height={64} className="h-16 w-auto mb-4" /> */}
+                        {/* <Image src="/assets/logo.jpeg" alt="The Outlaws" width={64} height={64} className="h-16 w-auto mb-4" /> */}
                         <p className="text-muted-foreground text-sm mb-6 max-w-xs">
                             Premium streetwear for those who dare to stand out. Express your style, own the streets.
                         </p>
@@ -114,7 +114,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-muted-foreground">
-                        © 2026 The Outlaws Club. All rights reserved.
+                        © 2026 The Outlaws. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">

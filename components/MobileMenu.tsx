@@ -83,7 +83,7 @@ const MobileMenu = ({ isOpen, onClose, links }: MobileMenuProps) => {
                                     </Link>
                                 </div>
                                 <p className="mt-6 text-sm text-muted-foreground">
-                                    © 2026 The Outlaws Club. All rights reserved.
+                                    © 2026 The Outlaws. All rights reserved.
                                 </p>
                             </div>
                         </div>

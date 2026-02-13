@@ -7,6 +7,15 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const slides = [
+    // {
+    //     id: 0,
+    //     image: "/assets/hero-6.jpg",
+    //     title: "URBAN ESSENTIALS",
+    //     subtitle: "HOODIES",
+    //     description: "Comfort meets culture",
+    //     cta: "Explore",
+    // },
+    
     {
         id: 1,
         image: "/assets/hero-3.jpg",
@@ -38,6 +47,14 @@ const slides = [
         subtitle: "NEW ARRIVAL",
         description: "Elevate your style",
         cta: "Shop Now",
+    },
+    {
+        id: 5,
+        image: "/assets/hero-6.jpg",
+        title: "URBAN ESSENTIALS",
+        subtitle: "HOODIES",
+        description: "Comfort meets culture",
+        cta: "Explore",
     },
 ];
 

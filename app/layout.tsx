@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The OutLaws Club | Streetwear",
+  title: "The Outlaws | Streetwear",
   description: "Premium streetwear for those who dare to stand out.",
 };
 

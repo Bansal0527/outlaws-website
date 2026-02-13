@@ -74,8 +74,15 @@ const Header = () => {
                                         className="object-cover"
                                     />
                                 </div> */}
-                                <span className="text-lg lg:text-2xl font-bold tracking-tighter uppercase text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
-                                    The OutLaws Club
+                                <span 
+                                    style={{ 
+                                        fontFamily: "'Cinzel', serif",
+                                        fontWeight: '900',
+                                        letterSpacing: '3px',
+                                    }} 
+                                    className="text-2xl lg:text-4xl font-bold text-foreground group-hover:text-primary transition-colors whitespace-nowrap"
+                                >
+                                    THE OUTLAWS
                                 </span>
                             {/* </Link> */}
                         </div>

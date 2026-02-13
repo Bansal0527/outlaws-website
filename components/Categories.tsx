@@ -29,14 +29,14 @@ const categories = [
     {
         id: 4,
         name: "HOODIES",
-        image: "/assets/category-hoodies.jpg",
+        image: "/assets/category-hoddies.jpeg",
         count: "28 Items",
         href: "/products/hoodies",
     },
     {
         id: 5,
         name: "OVERSIZED",
-        image: "/assets/category-accessories.jpg",
+        image: "/assets/category-oversize.jpg",
         count: "16 Items",
         href: "/products/oversized",
     },
