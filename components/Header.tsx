@@ -49,7 +49,7 @@ const Header = () => {
                                 <Menu className="h-6 w-6" />
                             </Button>
 
-                            {/* Desktop Nav */}
+                            {/* Desktop Nav
                             <nav className="hidden lg:flex items-center gap-4">
                                 {navLinks.map((link) => (
                                     <Link
@@ -60,7 +60,7 @@ const Header = () => {
                                         {link.name}
                                     </Link>
                                 ))}
-                            </nav>
+                            </nav> */}
                         </div>
 
                         {/* Center - Logo */}
@@ -135,11 +135,11 @@ const Header = () => {
             </header>
 
             {/* Mobile Menu */}
-            <MobileMenu
+            {/* <MobileMenu
                 isOpen={isMenuOpen}
                 onClose={() => setIsMenuOpen(false)}
                 links={navLinks}
-            />
+            /> */}
         </>
     );
 };

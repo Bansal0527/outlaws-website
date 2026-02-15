@@ -50,9 +50,9 @@ const FinalCollection = () => {
                     <span className="text-primary font-medium tracking-wider text-sm">
                         LATEST DROPS
                     </span>
-                    <h2 className="font-display text-4xl md:text-5xl text-foreground mt-2">
+                    {/* <h2 className="font-display text-4xl md:text-5xl text-foreground mt-2">
                         Final Collection
-                    </h2>
+                    </h2> */}
                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                         Explore our latest collection featuring exclusive designs
                     </p>

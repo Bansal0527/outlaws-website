@@ -11,9 +11,9 @@ export default function Home() {
       <main>
         <HeroCarousel />
         <Marquee />
-        <Categories />
+        {/* <Categories /> */}
         <FinalCollection />
-        <FeaturedProducts />
+        {/* <FeaturedProducts /> */}
         <Newsletter />
       </main>
     </div>
