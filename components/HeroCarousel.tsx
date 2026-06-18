@@ -106,7 +106,7 @@ const HeroCarousel = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="max-w-xl"
                     >
-                        <span className="inline-block px-4 py-1 bg-primary text-primary-foreground text-sm font-medium tracking-wider mb-4">
+                        {/* <span className="inline-block px-4 py-1 bg-primary text-primary-foreground text-sm font-medium tracking-wider mb-4">
                             {slides[current].subtitle}
                         </span>
                         <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-white dark:text-foreground leading-none mb-4">
@@ -114,7 +114,7 @@ const HeroCarousel = () => {
                         </h2>
                         <p className="text-lg md:text-xl text-white/90 dark:text-foreground/80 mb-8">
                             {slides[current].description}
-                        </p>
+                        </p> */}
                         <Button variant="hero" size="lg">
                             {slides[current].cta}
                         </Button>
