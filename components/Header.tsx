@@ -14,14 +14,14 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-    const navLinks = [
-        { name: "New Arrivals", href: "/new-arrivals" },
-        { name: "T-Shirts", href: "/products/tshirts" },
-        { name: "Polos", href: "/products/polo" },
-        { name: "Hoodies", href: "/products/hoodies" },
-        { name: "Shirts", href: "/products/shirts" },
-        { name: "Oversized", href: "/products/oversized" },
-    ];
+    // const navLinks = [
+    //     { name: "New Arrivals", href: "/new-arrivals" },
+    //     { name: "T-Shirts", href: "/products/tshirts" },
+    //     { name: "Polos", href: "/products/polo" },
+    //     { name: "Hoodies", href: "/products/hoodies" },
+    //     { name: "Shirts", href: "/products/shirts" },
+    //     { name: "Oversized", href: "/products/oversized" },
+    // ];
 
     return (
         <>
@@ -36,73 +36,46 @@ const Header = () => {
                 </div>
 
                 {/* Main Header */}
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-3 items-center h-16 lg:h-20 relative">
-                        {/* Left - Menu & Nav */}
-                        <div className="flex items-center justify-start">
+                <div className="container mx-auto px-2 sm:px-4">
+                    <div className="flex items-center justify-between h-16 lg:h-20 gap-2">
+                        {/* Left - Menu Button */}
+                        <div className="flex items-center lg:flex-1">
                             <Button
                                 variant="ghost"
                                 size="icon"
                                 onClick={() => setIsMenuOpen(true)}
-                                className="lg:hidden mr-2"
+                                className="lg:hidden h-9 w-9"
                             >
-                                <Menu className="h-6 w-6" />
+                                <Menu className="h-5 w-5" />
                             </Button>
-
-                            {/* Desktop Nav
-                            <nav className="hidden lg:flex items-center gap-4">
-                                {navLinks.map((link) => (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className="text-[10px] xl:text-[11px] font-semibold text-foreground/80 hover:text-primary transition-colors uppercase tracking-widest whitespace-nowrap"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </nav> */}
                         </div>
 
                         {/* Center - Logo */}
-                        <div className="flex items-center justify-center">
-                            {/* <Link href="/" className="flex items-center gap-3 group">
-                                <div className="relative w-8 h-8 lg:w-10 lg:h-10 overflow-hidden rounded-sm border border-border group-hover:border-primary transition-colors">
-                                    <Image
-                                        src="/assets/logo.jpeg"
-                                        alt="Logo"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div> */}
+                        <div className="flex items-center justify-center flex-shrink-0 px-2">
+                            <Link href="/" className="group">
                                 <span 
                                     style={{ 
                                         fontFamily: "'Cinzel', serif",
                                         fontWeight: '900',
-                                        letterSpacing: '3px',
+                                        letterSpacing: '1px',
                                     }} 
-                                    className="text-2xl lg:text-4xl font-bold text-foreground group-hover:text-primary transition-colors whitespace-nowrap"
+                                    className="text-base sm:text-xl md:text-2xl lg:text-4xl font-bold text-foreground group-hover:text-primary transition-colors whitespace-nowrap"
                                 >
                                     THE OUTLAWS
                                 </span>
-                            {/* </Link> */}
+                            </Link>
                         </div>
 
                         {/* Right - Icons */}
-                        <div className="flex items-center justify-end gap-1 md:gap-2">
-                            <ThemeToggle />
-                            {/* <Button
-                                variant="ghost"
-                                size="icon"
-                                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                                className="h-9 w-9"
-                            >
-                                <Search className="h-5 w-5" />
-                            </Button> */}
+                        <div className="flex items-center justify-end gap-0.5 sm:gap-1 md:gap-2 lg:flex-1">
+                            <div className="hidden sm:block">
+                                <ThemeToggle />
+                            </div>
                             <Button variant="ghost" size="icon" className="h-9 w-9">
-                                <User className="h-5 w-5" />
+                                <User className="h-4 w-4 sm:h-5 sm:w-5" />
                             </Button>
                             <Button variant="ghost" size="icon" className="relative h-9 w-9">
-                                <ShoppingBag className="h-5 w-5" />
+                                <ShoppingBag className="h-4 w-4 sm:h-5 sm:w-5" />
                                 <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-primary-foreground text-[10px] flex items-center justify-center font-bold">
                                     0
                                 </span>

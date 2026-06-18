@@ -1,134 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ShoppingBag, Heart, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-
-// Collection data with all images
-const collectionsData: Record<string, { 
-    name: string; 
-    images: string[];
-    description: string;
-    features: string[];
-    price: number;
-    originalPrice: number;
-}> = {
-    "3": {
-        name: "Urban Street Hoodie",
-        description: "Elevate your streetwear game with this premium urban hoodie. Crafted from high-quality cotton blend fabric, this hoodie combines comfort with style. Perfect for those cool evenings or casual day outs, it features a modern fit that complements any outfit. The attention to detail in stitching and finishing makes it a must-have in your wardrobe.",
-        features: [
-            "Premium 280 GSM cotton blend fabric",
-            "Relaxed fit for maximum comfort",
-            "Ribbed cuffs and hem for better fit",
-            "Durable stitching and construction",
-            "Machine washable and easy care",
-            "Available in multiple sizes"
-        ],
-        price: 1999,
-        originalPrice: 2999,
-        images: [
-            "/assets/final-collection/3/IMG-20260202-WA0058.jpg",
-            "/assets/final-collection/3/IMG-20260202-WA0059.jpg",
-            "/assets/final-collection/3/IMG-20260202-WA0060.jpg",
-            "/assets/final-collection/3/IMG-20260202-WA0061.jpg",
-        ],
-    },
-    "5": {
-        name: "Classic Graphic Tee",
-        description: "Make a statement with this eye-catching graphic tee. Designed for the modern urban explorer, this tee features unique artwork that sets you apart from the crowd. Made from soft, breathable fabric, it's perfect for everyday wear. Whether you're hanging out with friends or hitting the streets, this tee has got you covered.",
-        features: [
-            "100% premium combed cotton",
-            "Soft and breathable fabric",
-            "Unique graphic print design",
-            "Pre-shrunk for lasting fit",
-            "Reinforced shoulder seams",
-            "Fade-resistant colors"
-        ],
-        price: 1299,
-        originalPrice: 1899,
-        images: [
-            "/assets/final-collection/5/IMG-20260202-WA0042.jpg",
-            "/assets/final-collection/5/IMG-20260202-WA0044.jpg",
-            "/assets/final-collection/5/IMG-20260202-WA0049.jpg",
-            "/assets/final-collection/5/IMG-20260202-WA0050.jpg",
-            "/assets/final-collection/5/IMG-20260202-WA0051.jpg",
-            "/assets/final-collection/5/IMG-20260202-WA0052.jpg",
-        ],
-    },
-    "6": {
-        name: "Oversized Drop Shoulder Tee",
-        description: "Experience ultimate comfort with our oversized drop shoulder tee. This trendy piece is designed for those who love a relaxed, laid-back style. The oversized fit and drop shoulder design create a contemporary silhouette that's both comfortable and fashionable. Perfect for layering or wearing on its own.",
-        features: [
-            "Oversized relaxed fit",
-            "Drop shoulder design",
-            "Super soft 220 GSM fabric",
-            "Extra length for modern look",
-            "Breathable and lightweight",
-            "Perfect for all-day wear"
-        ],
-        price: 1599,
-        originalPrice: 2299,
-        images: [
-            "/assets/final-collection/6/IMG-20260202-WA0027.jpg",
-            "/assets/final-collection/6/IMG-20260202-WA0028.jpg",
-            "/assets/final-collection/6/IMG-20260202-WA0029.jpg",
-            "/assets/final-collection/6/IMG-20260202-WA0030.jpg",
-            "/assets/final-collection/6/IMG-20260202-WA0031.jpg",
-        ],
-    },
-    "7": {
-        name: "Premium Polo Shirt",
-        description: "Step up your casual game with this premium polo shirt. Combining classic style with modern comfort, this polo is perfect for both casual and semi-formal occasions. The quality fabric ensures breathability while maintaining a sharp look throughout the day. A versatile addition to any wardrobe.",
-        features: [
-            "Premium pique cotton fabric",
-            "Classic collar design",
-            "Ribbed collar and cuffs",
-            "Breathable and moisture-wicking",
-            "Color-fast buttons",
-            "Regular fit with slight stretch"
-        ],
-        price: 1799,
-        originalPrice: 2599,
-        images: [
-            "/assets/final-collection/7/IMG-20260205-WA0002.jpg",
-            "/assets/final-collection/7/IMG-20260205-WA0003.jpg",
-            "/assets/final-collection/7/IMG-20260205-WA0004.jpg",
-            "/assets/final-collection/7/IMG-20260205-WA0005.jpg",
-            "/assets/final-collection/7/IMG-20260205-WA0006.jpg",
-        ],
-    },
-    "9": {
-        name: "Essential Solid Tee",
-        description: "A wardrobe essential that never goes out of style. This solid tee is the foundation of great style - simple, versatile, and incredibly comfortable. Made from premium quality fabric, it offers the perfect balance of durability and softness. Ideal for mixing and matching with any outfit in your collection.",
-        features: [
-            "Premium solid color design",
-            "200 GSM combed cotton",
-            "Regular fit for all body types",
-            "Reinforced neckline",
-            "Tag-free for added comfort",
-            "Versatile styling options"
-        ],
-        price: 1099,
-        originalPrice: 1599,
-        images: [
-            "/assets/final-collection/9/IMG-20260203-WA0018.jpg",
-            "/assets/final-collection/9/IMG-20260203-WA0019.jpg",
-            "/assets/final-collection/9/IMG-20260203-WA0020.jpg",
-            "/assets/final-collection/9/IMG-20260203-WA0021.jpg",
-        ],
-    },
-};
+import { getCollectionById } from "@/lib/collections";
 
 export default function CollectionDetailPage() {
     const params = useParams();
     const id = params?.id as string;
     const [selectedImage, setSelectedImage] = useState(0);
-    
-    const collection = collectionsData[id];
+    const collection = getCollectionById(id);
 
     if (!collection) {
         return (

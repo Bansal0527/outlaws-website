@@ -18,44 +18,44 @@ const slides = [
     
     {
         id: 1,
-        image: "/assets/hero-3.jpg",
+        image: "/assets/main.jpeg",
         title: "PRODUCT 10",
         subtitle: "NEW ARRIVAL",
         description: "Elevate your style",
         cta: "Shop Now",
     },
-    {
-        id: 2,
-        image: "/assets/hero-1.jpg",
-        title: "STREET STYLE",
-        subtitle: "NEW DROP",
-        description: "Unleash your urban edge",
-        cta: "Shop Now",
-    },
-    {
-        id: 3,
-        image: "/assets/hero-2.jpg",
-        title: "URBAN ESSENTIALS",
-        subtitle: "HOODIES",
-        description: "Comfort meets culture",
-        cta: "Explore",
-    },
-    {
-        id: 4,
-        image: "/assets/product-9.jpg",
-        title: "PRODUCT 9",
-        subtitle: "NEW ARRIVAL",
-        description: "Elevate your style",
-        cta: "Shop Now",
-    },
-    {
-        id: 5,
-        image: "/assets/hero-6.jpg",
-        title: "URBAN ESSENTIALS",
-        subtitle: "HOODIES",
-        description: "Comfort meets culture",
-        cta: "Explore",
-    },
+    // {
+    //     id: 2,
+    //     image: "/assets/hero-1.jpg",
+    //     title: "STREET STYLE",
+    //     subtitle: "NEW DROP",
+    //     description: "Unleash your urban edge",
+    //     cta: "Shop Now",
+    // },
+    // {
+    //     id: 3,
+    //     image: "/assets/hero-2.jpg",
+    //     title: "URBAN ESSENTIALS",
+    //     subtitle: "HOODIES",
+    //     description: "Comfort meets culture",
+    //     cta: "Explore",
+    // },
+    // {
+    //     id: 4,
+    //     image: "/assets/product-9.jpg",
+    //     title: "PRODUCT 9",
+    //     subtitle: "NEW ARRIVAL",
+    //     description: "Elevate your style",
+    //     cta: "Shop Now",
+    // },
+    // {
+    //     id: 5,
+    //     image: "/assets/hero-6.jpg",
+    //     title: "URBAN ESSENTIALS",
+    //     subtitle: "HOODIES",
+    //     description: "Comfort meets culture",
+    //     cta: "Explore",
+    // },
 ];
 
 const HeroCarousel = () => {
@@ -72,7 +72,7 @@ const HeroCarousel = () => {
     const prev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative h-[calc(100vh-104px)] lg:h-screen w-full overflow-hidden">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={current}
