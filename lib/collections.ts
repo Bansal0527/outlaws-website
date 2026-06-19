@@ -17,7 +17,7 @@ type CollectionGroup = {
     features: string[];
     price: number;
     originalPrice: number;
-    items: Record<string, string[]>;
+    items: Record<string, string[] | { folderName: string; images: string[] }>;
 };
 
 const collectionGroups: CollectionGroup[] = [
@@ -119,12 +119,74 @@ const collectionGroups: CollectionGroup[] = [
             "4": ["IMG_7158.PNG", "IMG_7159.PNG", "IMG_7160.PNG", "IMG_7161.PNG"],
         },
     },
+    {
+        categoryId: "boys-tshirt",
+        categoryName: "Boys T-Shirt",
+        folderPath: "Boys%20tshirt%20",
+        description:
+            "Explore boys t-shirts made for everyday comfort, easy movement, and a clean casual look.",
+        features: [
+            "Soft breathable fabric",
+            "Comfortable everyday fit",
+            "Polo collar styling",
+            "Durable stitching",
+            "Machine washable",
+            "Available in multiple sizes",
+        ],
+        price: 899,
+        originalPrice: 1299,
+        items: {
+            "1-polo": {
+                folderName: "1%20polo",
+                images: [
+                    "IMG-20260618-WA0004.jpg",
+                    "IMG-20260618-WA0007.jpg",
+                    "IMG-20260618-WA0008.jpg",
+                    "IMG-20260618-WA0009.jpg",
+                    "IMG-20260618-WA0010.jpg",
+                    "IMG-20260618-WA0011.jpg",
+                ],
+            },
+            "2-polo": {
+                folderName: "2%20polo",
+                images: [
+                    "IMG-20260618-WA0003.jpg",
+                    "IMG-20260618-WA0012.jpg",
+                    "IMG-20260618-WA0017.jpg",
+                    "IMG-20260618-WA0018.jpg",
+                    "IMG-20260618-WA0019.jpg",
+                ],
+            },
+            "3-polo": {
+                folderName: "3%20polo",
+                images: [
+                    "IMG-20260618-WA0001.jpg",
+                    "IMG-20260618-WA0002.jpg",
+                    "IMG-20260618-WA0005.jpg",
+                    "IMG-20260618-WA0009.jpg",
+                    "IMG-20260618-WA0013.jpg",
+                    "IMG-20260618-WA0014.jpg",
+                ],
+            },
+            "4-polo": {
+                folderName: "4%20polo",
+                images: [
+                    "IMG-20260618-WA0020.jpg",
+                    "IMG-20260618-WA0021.jpg",
+                    "IMG-20260618-WA0022.jpg",
+                    "IMG-20260618-WA0023.jpg",
+                ],
+            },
+        },
+    },
 ];
 
 export const collections: Collection[] = collectionGroups.flatMap((group) =>
-    Object.entries(group.items).map(([itemId, fileNames]) => {
+    Object.entries(group.items).map(([itemId, item]) => {
+        const folderName = Array.isArray(item) ? itemId : item.folderName;
+        const fileNames = Array.isArray(item) ? item : item.images;
         const images = fileNames.map(
-            (fileName) => `/assets/${group.folderPath}/${itemId}/${fileName}`,
+            (fileName) => `/assets/${group.folderPath}/${folderName}/${fileName}`,
         );
 
         return {
